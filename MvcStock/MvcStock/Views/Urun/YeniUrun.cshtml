@@ -1,0 +1,48 @@
+﻿@model MvcStock.Models.Entity.Tbl_Urunler
+@{
+    ViewBag.Title = "YeniUrun";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<form method="post" class="form-group">
+    <div>
+        <label>ÜrÜn Ad</label>
+        @*<input type="text" class="form-control" name="UrunAd" required="" maxlength="30" placeholder="Ürün Adı "/>*@
+        @Html.TextBoxFor(m => m.UrunAd, new { @class = "form-control", @id = "txtAd" })
+    </div>
+    <div>
+        <label>Ürün Marka</label>
+        @*<input type="text" class=" form-control" name="UrunMarka" placeholder="Marka " required="" />*@
+        @Html.TextBoxFor(m => m.UrunMarka, new { @class = "form-control", @id = "txtMarka" })
+
+    </div>
+    <div>
+        <label>Ürün Kategori</label>
+        @Html.DropDownListFor(m => m.Tbl_Kategoriler.KategoriId, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Ürün Fiyat</label>
+        <input type="text" class=" form-control" name="UrunFiyat" required="" placeholder="Ürün Fiyatı" />
+    </div>
+    <div>
+        <label>Ürün Stok</label>
+        <input type="text" class=" form-control" name="UrunStok" required="" placeholder="Stok Adet" />
+    </div>
+    <div style="margin-top:15px;">
+        <button class=" btn btn-info" onclick="ButonaBas()">Ürün Ekle</button>
+    </div>
+    <script>
+        function ButonaBas() {
+            if (document.getElementById("txtAd").value == "") {
+                alert("Ekleme İşlemi Gerçekleşmedi")
+            }
+            if (document.getElementById("txtMarka").value == "") {
+                alert("Ekleme İşlemi Gerçekleşmedi")
+            }
+            else {
+                alert("Ürün Ekleme İşlemi Başarılı")
+            }
+        }
+    </script>
+</form>
+

@@ -1,0 +1,25 @@
+﻿@model MvcStock.Models.Entity.Tbl_Musteriler
+@{
+    ViewBag.Title = "MusteriGuncelle";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2 style="margin-bottom:15px;">Müşteri Güncelle</h2>
+
+@using (Html.BeginForm("Guncelle", "Musteriler", FormMethod.Post))
+{
+    <div class=" form-group">
+        <h2 style="font-size:16px;">Müşteri Id</h2>
+        @Html.TextBoxFor(m => m.MusteriId, new { @class = "form-control" })
+        <br />
+        <h2 style=" font-size:16px">Müşteri Ad</h2>
+        @Html.TextBoxFor(m => m.MusteriAd, new { @class = "form-control" })
+        <br />
+        <h2 style="font-size:16px;">Müşteri Soyad</h2>
+        @Html.TextBoxFor(m => m.MusteriSoyad, new { @class = "form-control" })
+    </div>
+    <div>
+        <button class=" btn btn-warning">Müşteri Güncelle</button>
+    </div>
+}
+

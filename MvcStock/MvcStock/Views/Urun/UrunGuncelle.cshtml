@@ -1,0 +1,44 @@
+﻿@model MvcStock.Models.Entity.Tbl_Urunler
+@{
+    ViewBag.Title = "UrunGuncelle";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>Ürün Güncelle</h2>
+
+@using (Html.BeginForm("Guncelle", "Urun", FormMethod.Post))
+{
+    <div class=" form-group">
+        <h2 style="font-size:16px;">Ürün Id</h2>
+        @Html.TextBoxFor(m => m.UrunId, new { @class = "form-control" })
+        <br />
+        <h2 style=" font-size:16px">Ürün Ad</h2>
+        @Html.TextBoxFor(m => m.UrunAd, new { @class = "form-control" })
+        <br />
+        <h2 style=" font-size:16px">Ürün Marka</h2>
+        @Html.TextBoxFor(m => m.UrunMarka, new { @class = "form-control" })
+        <br />
+        <h2 style="font-size:16px;">Ürün Kategori </h2>
+        @Html.DropDownListFor(m=>m.Tbl_Kategoriler.KategoriId,(List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+        @*Html.TextBoxFor(m => m.Tbl_Kategoriler.KategoriAd, new { @class = "form-control" })*@
+        <br />
+        <h2 style=" font-size:16px">Ürün Fiyat</h2>
+        @Html.TextBoxFor(m => m.UrunFiyat, new { @class = "form-control" })
+        <br />
+        <h2 style=" font-size:16px">Ürün Stok</h2>
+        @Html.TextBoxFor(m => m.UrunStok, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px;">
+        <button class=" btn btn-warning">Ürün Güncelle</button>
+    </div>
+}
+
+
+
+
+
+
+
+
+
+
