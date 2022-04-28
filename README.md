@@ -1,0 +1,2 @@
+# Mvc.NetFramework
+MvcStockProject
